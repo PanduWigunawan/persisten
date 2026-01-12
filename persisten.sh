@@ -2221,9 +2221,9 @@ if [[ -n "$GS_KEEPALIVE" ]] || [[ -n "$GS_WEBSHELL_URL" ]] || [[ -n "$GS_WEBSHEL
 		IFS=',' read -ra WS_PAIRS <<< "$GS_WEBSHELL_MAP"
 		for pair in "${WS_PAIRS[@]}"; do
 			pair=$(echo "$pair" | xargs)
-			local ws_file="${pair%%:*}"
-			local ws_url="${pair#*:}"
-			echo -e "    ${CM}${ws_file}${CN} <- ${CDC}${ws_url}${CN}"
+			_ws_file="${pair%%:*}"
+			_ws_url="${pair#*:}"
+			echo -e "    ${CM}${_ws_file}${CN} <- ${CDC}${_ws_url}${CN}"
 		done
 	elif [[ -n "$GS_WEBSHELL_FILES" ]]; then
 		echo -e "--> Monitored webshells: ${CM}${GS_WEBSHELL_FILES}${CN}"
